@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ek Chhoti Si Baat... ❤️</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    min-height:100vh;
+    font-family: "Segoe UI", sans-serif;
+    background:
+      radial-gradient(circle at top left, #ffd6e7 0%, transparent 35%),
+      radial-gradient(circle at bottom right, #d9d2ff 0%, transparent 35%),
+      linear-gradient(135deg,#fff0f6,#f3efff);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    color:#4b2940;
+}
+
+.page{
+    display:none;
+    width:100%;
+    min-height:100vh;
+    justify-content:center;
+    align-items:center;
+    padding:25px;
+}
+
+.page.active{
+    display:flex;
+}
+
+.card{
+    width:min(430px,94vw);
+    background:rgba(255,255,255,0.78);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,0.8);
+    border-radius:30px;
+    padding:35px 25px;
+    text-align:center;
+    box-shadow:0 15px 50px rgba(120,60,100,0.16);
+    animation:cardIn .7s ease;
+}
+
+@keyframes cardIn{
+    from{
+        opacity:0;
+        transform:translateY(25px) scale(.96);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+}
+
+.emoji{
+    font-size:60px;
+    margin-bottom:15px;
+    animation:float 2.5s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-8px)}
+}
+
+h1{
+    font-size:27px;
+    margin-bottom:14px;
+    color:#7b3158;
+}
+
+h2{
+    font-size:23px;
+    color:#813b60;
+    margin-bottom:15px;
+}
+
+p{
+    font-size:16px;
+    line-height:1.8;
+    color:#624653;
+}
+
+.small{
+    font-size:13px;
+    margin-top:12px;
+    color:#947483;
+}
+
+button{
+    border:none;
+    padding:13px 25px;
+    border-radius:30px;
+    font-size:15px;
+    cursor:pointer;
+    margin-top:22px;
+    font-weight:600;
+    transition:.25s;
+}
+
+.next{
+    background:linear-gradient(135deg,#e86b9c,#a875d6);
+    color:white;
+    box-shadow:0 8px 20px rgba(180,80,130,.25);
+}
+
+.next:hover{
+    transform:translateY(-3px);
+}
+
+.soft{
+    background:#fff;
+    color:#7d4660;
+    border:1px solid #f0cada;
+    margin:8px;
+}
+
+.message{
+    background:#fff7fb;
+    border-radius:22px;
+    padding:20px;
+    margin-top:18px;
+    border:1px solid #f5dce8;
+    text-align:left;
+}
+
+.message p{
+    font-size:15px;
+}
+
+.heart{
+    position:fixed;
+    bottom:-30px;
+    font-size:20px;
+    opacity:.7;
+    animation:heartUp 5s linear forwards;
+    pointer-events:none;
+}
+
+@keyframes heartUp{
+    from{
+        transform:translateY(0) rotate(0deg);
+        opacity:.8;
+    }
+    to{
+        transform:translateY(-110vh) rotate(25deg);
+        opacity:0;
+    }
+}
+
+.corner{
+    position:fixed;
+    font-size:35px;
+    opacity:.75;
+}
+
+.c1{top:20px;left:20px;}
+.c2{top:25px;right:20px;}
+.c3{bottom:20px;left:20px;}
+.c4{bottom:20px;right:20px;}
+
+.typing{
+    min-height:55px;
+}
+
+.promise{
+    margin-top:20px;
+    font-size:14px;
+    color:#87516a;
+    font-style:italic;
+}
+
+.choice{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:8px;
+}
+
+.hidden{
+    display:none;
+}
+
+.final{
+    font-size:18px;
+    font-weight:600;
+    color:#743450;
+    line-height:1.7;
+}
+</style>
+</head>
+
+<body>
+
+<div class="corner c1">🌸</div>
+<div class="corner c2">💗</div>
+<div class="corner c3">🧸</div>
+<div class="corner c4">✨</div>
+
+
+<!-- PAGE 1 -->
+<section class="page active" id="page1">
+
+<div class="card">
+
+<div class="emoji">🥺💗</div>
+
+<h1>Hey... Madam ❤️</h1>
+
+<p>
+Aaj ek chhoti si baat kehni hai...
+thodi seriously, thodi dil se.
+</p>
+
+<button class="next" onclick="nextPage(2)">
+Open This 💌
+</button>
+
+</div>
+
+</section>
+
+
+<!-- PAGE 2 -->
+<section class="page" id="page2">
+
+<div class="card">
+
+<div class="emoji">🙈❤️</div>
+
+<h2>Sabse pehle...</h2>
+
+<p>
+Mujhe pata hai ki maine jo baat kahi,
+woh tumhe achhi nahi lagi...
+aur honestly,
+mujhe woh baat kehni bhi nahi chahiye thi.
+</p>
+
+<button class="next" onclick="nextPage(3)">
+Aage bolo...
+</button>
+
+</div>
+
+</section>
+
+
+<!-- PAGE 3 -->
+<section class="page" id="page3">
+
+<div class="card">
+
+<div class="emoji">🥺</div>
+
+<h2>Ek baat clear karni hai...</h2>
+
+<div class="message">
+
+<p>
+Jab maine poocha tha ki
+<strong>"tum mujhe chhod ke toh nahi jaogi?"
+"cheat toh nahi karogi?"</strong>
+<br><br>
+
+woh tum par trust na hone ki wajah se nahi tha...
+woh meri insecurity thi.
+<br><br>
+
+Aur haan...
+<strong>meri galti thi.</strong>
+</p>
+
+</div>
+
+<button class="next" onclick="nextPage(4)">
+Samjhi? ❤️
+</button>
+
+</div>
+
+</section>
+
+
+<!-- PAGE 4 -->
+<section class="page" id="page4">
+
+<div class="card">
+
+<div class="emoji">💗🫶</div>
+
+<h2>Actually sach kya hai?</h2>
+
+<p>
+Tumne mujhe kabhi aisa reason diya hi nahi
+ki mujhe tum par doubt ho.
+<br><br>
+
+Tumhari honesty,
+tumhara care,
+aur tumhara mere saath rehna...
+ye sab mere liye important hai.
+</p>
+
+<div class="message">
+
+<p>
+Mujhe tum par trust hai.
+Bas kabhi-kabhi mera dimaag
+unnecessary cheezein soch leta hai.
+😔
+</p>
+
+</div>
+
+<button class="next" onclick="nextPage(5)">
+Ek aur baat ❤️
+</button>
+
+</div>
+
+</section>
+
+
+<!-- PAGE 5 -->
+<section class="page" id="page5">
+
+<div class="card">
+
+<div class="emoji">🧸💗</div>
+
+<h2>Sorry... ❤️</h2>
+
+<div class="message">
+
+<p>
+I'm sorry ki meri ek baat ki wajah se
+tumhe ye feel hua ki
+<strong>mujhe tum par trust nahi hai.</strong>
+<br><br>
+
+Main tumhe doubt karke hurt nahi karna chahta.
+Aur na hi main chahta hoon ki meri insecurity
+tumhare dil par burden bane.
+<br><br>
+
+Bas itna samajhna...
+kabhi kabhi jo insaan humein
+sabse zyada important hota hai,
+use lose karne ka thought bhi dara deta hai.
+</p>
+
+</div>
+
+<button class="next" onclick="nextPage(6)">
+Last one... 🥺
+</button>
+
+</div>
+
+</section>
+
+
+<!-- PAGE 6 -->
+<section class="page" id="page6">
+
+<div class="card">
+
+<div class="emoji">❤️✨</div>
+
+<h2>Can you forgive me?</h2>
+
+<p class="final">
+Mujhe tumse koi proof nahi chahiye...
+mujhe bas tumhara saath chahiye. ❤️
+</p>
+
+<p style="margin-top:15px;">
+Aur haan...
+aaj ke baad unnecessary doubt wali
+baatein bolne se pehle
+main khud ko rokunga. 🫶
+</p>
+
+<div class="choice">
+
+<button class="soft" onclick="forgive()">
+Haan, maaf kiya ❤️
+</button>
+
+<button class="soft" onclick="forgive()">
+Thoda aur manaao 😌
+</button>
+
+</div>
+
+<div id="finalMsg" class="hidden message">
+
+<p>
+Thank you meri jaan. ❤️
+<br><br>
+
+Bas ek baat yaad rakhna —
+<strong>mujhe tum par trust hai.</strong>
+<br><br>
+
+Jo hua woh meri galti thi,
+aur I'm genuinely sorry
+ki meri insecurity ki wajah se
+tum sad hui.
+<br><br>
+
+Ab smile karo na... 🥺
+Tumhari smile zyada achhi lagti hai. 💗
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<script>
+
+let currentPage = 1;
+
+function nextPage(pageNumber){
+
+    document.getElementById("page" + currentPage)
+        .classList.remove("active");
+
+    document.getElementById("page" + pageNumber)
+        .classList.add("active");
+
+    currentPage = pageNumber;
+
+    makeHearts(5);
+}
+
+
+function forgive(){
+
+    document.getElementById("finalMsg")
+        .classList.remove("hidden");
+
+    makeHearts(15);
+
+    setTimeout(() => {
+        document.getElementById("finalMsg")
+            .scrollIntoView({
+                behavior:"smooth",
+                block:"center"
+            });
+    },100);
+}
+
+
+function makeHearts(amount){
+
+    for(let i=0;i<amount;i++){
+
+        let heart = document.createElement("div");
+
+        heart.className = "heart";
+
+        let symbols = ["❤️","💗","💕","💖","✨"];
+
+        heart.innerHTML =
+            symbols[Math.floor(Math.random()*symbols.length)];
+
+        heart.style.left =
+            Math.random()*100 + "vw";
+
+        heart.style.animationDuration =
+            (4 + Math.random()*3) + "s";
+
+        heart.style.fontSize =
+            (15 + Math.random()*18) + "px";
+
+        document.body.appendChild(heart);
+
+        setTimeout(()=>{
+            heart.remove();
+        },7000);
+    }
+}
+
+
+setInterval(()=>{
+    if(document.visibilityState === "visible"){
+        makeHearts(1);
+    }
+},3500);
+
+</script>
+
+</body>
+</html>
